@@ -715,7 +715,7 @@ class CycleBreakerTransform(DashTransform):
 
     @staticmethod
     def _cycle_break_id(d: DashDependency):
-        return f"{str(d).replace('.', '_')}_breaker"
+        return f"{str(d).replace('.', '_').replace('{', '+_').replace('}', '_+')}_breaker"
 
 
 class CycleBreakerInput(Input):
